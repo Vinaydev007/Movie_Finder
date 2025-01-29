@@ -146,7 +146,7 @@
 
 
 // import React, { useState, useEffect } from "react";
-// import { searchMovies, getPopularMovies } from "../apiservice/api";
+// import { searchMovies,getPopularMovies } from "../apiservice/api";
 // import MovieCard from "../cards/cards";
 // import "../css/Home.css"; // Import styling
 
@@ -301,11 +301,13 @@ function Home({ language }) {
       setLoading(true);
       try {
         const popularMovies = await getPopularMovies(language);
+        console.log("Fetched Popular Movies:", popularMovies)
 
         // If 'all' is selected, we don't filter by language
         const filteredMovies = language === "*" 
           ? popularMovies 
           : popularMovies.filter((movie) => movie.original_language === language);
+          console.log("Filtered Movies:", filteredMovies)
 
         setMovies(filteredMovies);
         setError(null);
@@ -324,7 +326,7 @@ function Home({ language }) {
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchQuery.trim()) return;
-
+    
     setLoading(true);
     try {
       const searchResults = await searchMovies(searchQuery, language);
