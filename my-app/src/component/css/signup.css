@@ -1,18 +1,18 @@
 /* Box Shadow Animation */
-@keyframes shadowPulse {
+@keyframes shadowGlow {
     0% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
     }
     50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
     }
     100% {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
     }
 }
 
 /* Background Animation */
-@keyframes backgroundMove {
+@keyframes backgroundShift {
     0% {
         background-position: 0% 0%;
     }
@@ -21,7 +21,7 @@
     }
 }
 
-/* Smooth Fade-in Animation */
+/* Fade-in Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -33,20 +33,20 @@
     }
 }
 
-/* Login Container */
-.login {
+/* Sign Up Container */
+.sign-up {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
     background-size: 400% 400%;
-    animation: backgroundMove 10s infinite alternate ease-in-out;
+    animation: backgroundShift 10s infinite alternate ease-in-out;
 }
 
 /* Heading */
-.login h2 {
+.sign-up h2 {
     color: #ffffff;
     font-size: 2.2rem;
     font-weight: bold;
@@ -58,14 +58,14 @@
 
 /* Glassmorphic Form */
 form {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.2s ease-in-out, shadowPulse 2s infinite alternate ease-in-out;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-in-out, shadowGlow 2s infinite alternate ease-in-out;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -89,12 +89,12 @@ form {
     border-radius: 8px;
     border: none;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     transition: all 0.3s ease;
     outline: none;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-    animation: shadowPulse 3s infinite alternate;
+    animation: shadowGlow 3s infinite alternate;
 }
 
 .form-control::placeholder {
@@ -103,7 +103,7 @@ form {
 
 .form-control:focus {
     background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     transform: scale(1.02);
 }
 
@@ -115,30 +115,30 @@ form {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background: linear-gradient(90deg, #ff7b54, #ff3e44);
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: white;
     transition: all 0.3s ease-in-out;
-    animation: fadeIn 1.6s ease-in-out, shadowPulse 2s infinite alternate;
+    animation: fadeIn 1.6s ease-in-out, shadowGlow 2s infinite alternate;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
-    box-shadow: 0 0 10px rgba(255, 94, 94, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #ff5733, #ff0000);
+    background: linear-gradient(90deg, #00c6ff, #0033ff);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
 }
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
     form {
         width: 90%;
-        padding: 25px;
+        padding: 30px;
     }
 
-    .login h2 {
+    .sign-up h2 {
         font-size: 1.8rem;
     }
 
