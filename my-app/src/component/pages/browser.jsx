@@ -4,7 +4,7 @@ function BrowseMoviesButton() {
     const navigate = useNavigate(); // Initialize navigate
 
     const handleClick = () => {
-        navigate("/home");  // Navigate to /home
+        navigate("/");
     };
 
     return (

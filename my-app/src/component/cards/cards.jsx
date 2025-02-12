@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "../context/MovieContext";
-import "../css/moviecard.css"; // Ensure you have appropriate styles
+import "../css/demo.css"; // Ensure you have appropriate styles
 
 function MovieCard({ movie }) {
   const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();

@@ -1,46 +1,41 @@
-import { useState } from "react";
-import '../css/signup.css'
 
-function SignUp() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../FireBase/FireBase";
+import { AuthContext } from "../context/AuthContext";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle sign up logic here
-        console.log("Sign Up", { email, password });
-    };
+const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const { setIsAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    return (
-        <div className="sign-up">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">
-                    Sign Up
-                </button>
-            </form>
-        </div>
-    );
-}
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    setError(null);
 
-export default SignUp;
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      setIsAuthenticated(true);
+      navigate("/");
+    } catch (err) {
+      setError("Signup failed. Try again.");
+    }
+  };
+
+  return (
+    <div className="signup-container">
+      <h2>Sign Up</h2>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSignup}>
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  );
+};
+
+export default Signup;

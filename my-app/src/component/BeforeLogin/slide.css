@@ -1,0 +1,15 @@
+.custom-img {
+    width: 100vw; /* Full width of the viewport */
+    height: 400px; /* Adjust height as needed */
+    object-fit: cover; /* Prevents distortion, crops if needed */
+    border-radius: 10px; /* Optional rounded corners */
+  }
+  
+
+  body {
+    background-color: black !important;
+    color: white; /* Ensures text is readable */
+    margin: 0;
+    padding: 0;
+  }
+  
