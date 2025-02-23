@@ -23,7 +23,7 @@ function Favorites() {
 
   return (
     <div className="favorites" aria-live="polite">
-      <h2>Your Favorites</h2>
+      <h2>Your's Favourite Collection</h2>
       <div className="movies-grid">
         {favorites.map((movie) => (
           <MovieCard movie={movie} key={movie.id} />

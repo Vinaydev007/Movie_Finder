@@ -2,7 +2,7 @@ const API_KEY = "6dc321a506410cc1c6c5b17ef8334789";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 // Get movies from multiple pages (5 pages by default)
-export const getPopularMovies = async (language = "en-US", maxPages = 5) => {
+export const getPopularMovies = async (language = "*", maxPages = 5) => {
   let allMovies = [];
 
   for (let page = 1; page <= maxPages; page++) {
