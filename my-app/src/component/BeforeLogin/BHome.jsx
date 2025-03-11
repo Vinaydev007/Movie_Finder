@@ -3,6 +3,7 @@ import Bnavbar from "./Bnavbar";
 import Slide from "./slide";
 import MovieCard from "./Browse"; // Ensure correct import
 import "./slide.css"
+import "./BHome.css"
 
 export default function BHome() {
   const [movies, setMovies] = useState([]); // State to store movies

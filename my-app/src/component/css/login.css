@@ -1,0 +1,77 @@
+/* Scope all styles under .login-container */
+.login-container {
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  margin: auto;
+}
+
+/* Title */
+.login-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+}
+
+.login-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #ff6b6b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.login-container button:hover {
+  background: #ff4757;
+}
+
+.login-container button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.login-container .error {
+  background: rgba(255, 0, 0, 0.2);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+  }
+}

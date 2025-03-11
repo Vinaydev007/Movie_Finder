@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { Card, Button, Modal } from "react-bootstrap";
-import "../css/demo.css"; // Ensure styles are imported
+import { useNavigate } from "react-router-dom";
+import "../css/demo.css"; // Import styles
 
 function MovieCard({ movie }) {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
-  if (!movie) {
-    return null; // Return nothing if movie is undefined
-  }
+  if (!movie) return null; // Avoid rendering if no movie data
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
+  const handleLoginRedirect = () => {
+    handleClose();
+    navigate("/login");
+  };
 
   return (
     <>
@@ -28,10 +32,10 @@ function MovieCard({ movie }) {
         <Card.Body>
           <Card.Title>{movie.title || "Unknown Title"}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            {movie.vote_average ? `Rating: ${movie.vote_average}` : "No Rating"}
+            {movie.vote_average ? `⭐ ${movie.vote_average}` : "No Rating"}
           </Card.Subtitle>
           <Card.Text>
-            {movie.release_date ? movie.release_date.split("-")[0] : "Unknown Year"}
+            {movie.release_date ? `📅 ${movie.release_date.split("-")[0]}` : "Unknown Year"}
           </Card.Text>
           <Button variant="primary" onClick={handleShow}>
             View Details
@@ -51,7 +55,7 @@ function MovieCard({ movie }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => alert("Redirect to login")}>
+          <Button variant="primary" onClick={handleLoginRedirect}>
             Login Now
           </Button>
         </Modal.Footer>
@@ -61,3 +65,4 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
+

@@ -1,0 +1,28 @@
+/* Ensure full viewport width */
+.bhome-container {
+    width: 100%;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212; /* Dark background */
+    padding: 20px 0;
+}
+
+/* Movie list styling */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Limit width for better layout */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Ensure movie cards fit within */
+.movie-card {
+    width: 100%;
+    max-width: 270px;
+    margin: auto;
+}

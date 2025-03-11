@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../FireBase/FireBase";
 import { AuthContext } from "../context/AuthContext";
+import "../css/signup.css"
 
 const Signup = () => {
   const [email, setEmail] = useState("");
