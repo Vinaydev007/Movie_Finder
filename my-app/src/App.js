@@ -22,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   const { isAuthenticated, loading } = useContext(AuthContext);
-  const [language, setLanguage] = useState("en-US");
+  const [language, setLanguage] = useState("*");
 
   if (loading) {
     return <h2>Loading...</h2>;
