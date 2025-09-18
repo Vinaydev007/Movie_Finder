@@ -20,7 +20,7 @@ export default function Slide() {
           <img
   className="d-block mx-auto custom-img"
   src={movie.backdrop_path 
-    ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+    ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}12`
     : "https://via.placeholder.com/500x300?text=No+Image"
   }
   alt={movie.title}
